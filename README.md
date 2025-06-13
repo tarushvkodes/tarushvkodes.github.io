@@ -1,2 +1,2 @@
 # tarushvkodes.github.io
-personal website 
+this is tarushv kosgi's personal website 
