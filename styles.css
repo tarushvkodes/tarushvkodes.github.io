@@ -363,6 +363,13 @@ body {
     line-height: 1.6;
 }
 
+.certification-skills-text {
+    font-size: 1rem;
+    color: #86868b;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
 .certification-link {
     color: #007aff;
     text-decoration: none;
