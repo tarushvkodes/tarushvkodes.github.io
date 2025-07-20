@@ -331,19 +331,20 @@ body {
 
 .certification-card {
     background: white;
-    padding: 48px;
-    border-radius: 24px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 56px;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 800px;
+    max-width: 850px;
     display: flex;
-    gap: 40px;
+    gap: 48px;
     align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .certification-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .certification-logo {
@@ -351,11 +352,10 @@ body {
 }
 
 .cert-image {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
-    border-radius: 16px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
 }
 
 .certification-content {
@@ -363,45 +363,46 @@ body {
 }
 
 .certification-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: #1d1d1f;
+    letter-spacing: -0.02em;
 }
 
 .certification-issuer {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #007aff;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .certification-description {
     font-size: 1rem;
-    color: #515154;
-    line-height: 1.6;
-    margin-bottom: 24px;
+    color: #6e6e73;
+    line-height: 1.5;
+    margin-bottom: 28px;
 }
 
 .certification-skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
 }
 
 .cert-skill-tag {
-    background-color: #f5f5f7;
-    color: #1d1d1f;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    background-color: #f8f9fa;
+    color: #495057;
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 0.875rem;
     font-weight: 500;
-    border: 1px solid #e5e5e7;
-    transition: all 0.3s ease;
+    border: none;
+    transition: all 0.2s ease;
 }
 
 .cert-skill-tag:hover {
-    background-color: #e5e5e7;
+    background-color: #e9ecef;
     transform: translateY(-1px);
 }
 
@@ -635,13 +636,13 @@ body {
     .certification-card {
         flex-direction: column;
         text-align: center;
-        gap: 24px;
-        padding: 32px;
+        gap: 32px;
+        padding: 40px;
     }
 
     .cert-image {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
 
     .skills-grid {
@@ -696,7 +697,7 @@ body {
     }
 
     .certification-card {
-        padding: 24px;
+        padding: 32px;
     }
 
     .certification-card h3 {
@@ -704,8 +705,8 @@ body {
     }
 
     .cert-image {
-        width: 80px;
-        height: 80px;
+        width: 75px;
+        height: 75px;
     }
 
     .volunteer-item {
