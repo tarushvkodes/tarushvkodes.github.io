@@ -351,6 +351,16 @@ body {
     text-decoration: none;
 }
 
+.certification-card h3,
+.certification-card p {
+    color: inherit;
+}
+
+.certification-card:visited h3,
+.certification-card:visited p {
+    color: inherit;
+}
+
 .certification-logo {
     flex-shrink: 0;
 }
@@ -370,14 +380,14 @@ body {
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 4px;
-    color: #1d1d1f;
+    color: #1d1d1f !important;
     letter-spacing: -0.02em;
     line-height: 1.2;
 }
 
 .certification-issuer {
     font-size: 0.9rem;
-    color: #007aff;
+    color: #007aff !important;
     font-weight: 500;
     margin-bottom: 0;
 }
