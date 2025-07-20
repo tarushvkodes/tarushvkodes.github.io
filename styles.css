@@ -322,6 +322,89 @@ body {
     box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
 }
 
+/* Certifications Section */
+.certifications-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certification-card {
+    background: white;
+    padding: 48px;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 800px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.certification-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.certification-logo {
+    flex-shrink: 0;
+}
+
+.cert-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.certification-content {
+    flex: 1;
+}
+
+.certification-card h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d1d1f;
+}
+
+.certification-issuer {
+    font-size: 1.1rem;
+    color: #007aff;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.certification-description {
+    font-size: 1rem;
+    color: #515154;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.certification-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cert-skill-tag {
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #e5e5e7;
+    transition: all 0.3s ease;
+}
+
+.cert-skill-tag:hover {
+    background-color: #e5e5e7;
+    transform: translateY(-1px);
+}
+
 /* Projects Section */
 .projects-grid {
     display: grid;
@@ -549,6 +632,18 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .certification-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+        padding: 32px;
+    }
+
+    .cert-image {
+        width: 100px;
+        height: 100px;
+    }
+
     .skills-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -598,6 +693,19 @@ body {
     .education-card,
     .project-card {
         padding: 24px;
+    }
+
+    .certification-card {
+        padding: 24px;
+    }
+
+    .certification-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .cert-image {
+        width: 80px;
+        height: 80px;
     }
 
     .volunteer-item {
