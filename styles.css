@@ -43,7 +43,7 @@ body::before {
     z-index: 1000;
     position: fixed;
     display: block;
-    overflow: hidden;
+    overflow: visible;
     isolation: isolate;
 
     /* Liquid glass inspired by shelfswap.app & taharawjani.org */
@@ -58,7 +58,6 @@ body::before {
         0 24px 60px rgba(15, 23, 42, 0.12),
         0 6px 18px rgba(15, 23, 42, 0.08);
 
-    transform: translateZ(0);
     will-change: backdrop-filter, background, box-shadow;
     transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
@@ -590,10 +589,11 @@ body::before {
 /* ------------------ Responsive ------------------ */
 @media (max-width: 768px) {
     .nav-menu {
-        position: fixed;
-        left: -100%;
+    position: fixed;
+    left: -100%;
         top: 72px;
         flex-direction: column;
+        z-index: 1100;
         background: rgba(255, 255, 255, 0.24);
         backdrop-filter: blur(28px) saturate(185%) brightness(112%);
         -webkit-backdrop-filter: blur(28px) saturate(185%) brightness(112%);
@@ -601,7 +601,10 @@ body::before {
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        padding: 24px 0;
+    padding: 32px 0;
+    gap: 20px;
+    min-height: calc(100vh - 72px);
+    justify-content: center;
         box-shadow: 0 20px 48px rgba(15, 23, 42, 0.18);
         background-image:
             linear-gradient(140deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.12) 60%, rgba(255, 255, 255, 0.04) 100%),
