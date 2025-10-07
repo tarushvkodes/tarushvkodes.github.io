@@ -94,16 +94,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add scroll-based navbar background opacity
-window.addEventListener('scroll', function() {
+// Add scroll-based navbar glass state
+(function() {
     const navbar = document.querySelector('.navbar');
-    
-    if (window.scrollY > 50) {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-    } else {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-    }
-});
+    if (!navbar) return;
+
+    const updateNavbarGlass = () => {
+        const isScrolled = window.scrollY > 56;
+        navbar.classList.toggle('navbar-scrolled', isScrolled);
+    };
+
+    updateNavbarGlass();
+    window.addEventListener('scroll', updateNavbarGlass, { passive: true });
+})();
 
 // Add typing effect to hero subtitle (optional enhancement)
 function typeWriter(element, text, speed = 50) {
