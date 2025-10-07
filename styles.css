@@ -609,3 +609,82 @@ body::before {
     outline: 2px solid #007aff;
     outline-offset: 2px;
 }
+
+/* === Liquid Glass Navbar (edge-to-edge, iOS-clean) === */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;                 /* full bleed */
+  width: 100vw;             /* defeat any parent width constraints */
+  height: 72px;
+  z-index: 1000;
+
+  /* iOS-style liquid glass */
+  background: rgba(255,255,255,0.58); /* clean white tint */
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
+
+  /* crisp hairline + subtle separation */
+  border-bottom: 0.5px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+
+  /* make it behave nicely on scroll/compositing */
+  will-change: backdrop-filter, background-color;
+}
+
+/* Full-bleed background layer so the glass fills edge-to-edge
+   even if inner content is centered with a max-width container */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;                      /* same tint as the bar */
+  -webkit-backdrop-filter: inherit;
+  backdrop-filter: inherit;
+  z-index: -1;
+}
+
+/* Safe-area padding so content doesn’t crash into the notch edges */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand & hairline-clean text for glass */
+.nav-brand h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(29,29,31,0.92);
+  text-shadow: 0 1px 1px rgba(255,255,255,0.35);
+}
+
+/* Optional: subtle bottom glow, like iOS */
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 18px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.06), rgba(0,0,0,0));
+}
+
+/* Mobile menu panel should also feel glassy */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 72px;
+    background: rgba(255,255,255,0.75);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    backdrop-filter: blur(24px) saturate(160%);
+    border-bottom: 0.5px solid rgba(0,0,0,0.06);
+  }
+}
