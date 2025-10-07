@@ -70,7 +70,7 @@ body::before {
     inset: 0;
     background:
         linear-gradient(130deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.12) 55%, rgba(255, 255, 255, 0.04) 100%),
-        linear-gradient(20deg, rgba(59, 130, 246, 0.18) 0%, rgba(236, 72, 153, 0.12) 40%, rgba(16, 185, 129, 0.16) 100%);
+        linear-gradient(22deg, rgba(59, 130, 246, 0.26) 0%, rgba(14, 165, 233, 0.18) 46%, rgba(56, 189, 248, 0.16) 100%);
     mix-blend-mode: lighten;
     opacity: 0.92;
     pointer-events: none;
