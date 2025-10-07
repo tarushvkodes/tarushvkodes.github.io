@@ -84,7 +84,7 @@ const observer = new IntersectionObserver(function(entries) {
 
 // Add fade-in animation to elements
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.education-card, .project-card, .volunteer-item, .contact-item');
+    const animatedElements = document.querySelectorAll('.education-card, .experience-card, .activity-card, .project-card, .volunteer-item, .contact-item');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';

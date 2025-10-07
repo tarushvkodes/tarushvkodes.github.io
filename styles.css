@@ -332,31 +332,137 @@ body::before {
 }
 
 /* Experience Section */
-.experience-item {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
 }
 
-.experience-item h3 {
-    font-size: 2rem;
+.experience-card {
+    background: white;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.experience-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.experience-card h3 {
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 8px;
     color: #1d1d1f;
 }
 
-.company {
-    font-size: 1.2rem;
+.experience-tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: #007aff;
-    font-weight: 500;
-    margin-bottom: 24px;
 }
 
-.experience-description p {
-    font-size: 1.1rem;
-    margin-bottom: 16px;
+.experience-organization {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #1d1d1f;
+}
+
+.experience-meta {
+    font-size: 0.95rem;
+    color: #86868b;
+}
+
+.experience-description {
+    font-size: 1.05rem;
     color: #515154;
     line-height: 1.6;
+}
+
+.experience-highlights {
+    margin-top: 4px;
+    margin-left: 20px;
+    padding-left: 4px;
+    list-style: disc;
+    color: #515154;
+    line-height: 1.6;
+}
+
+.experience-highlights li {
+    margin-bottom: 8px;
+}
+
+/* Activities Section */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.activity-card {
+    background: white;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.activity-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.activity-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.activity-tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #007aff;
+}
+
+.activity-organization {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #1d1d1f;
+}
+
+.activity-meta {
+    font-size: 0.95rem;
+    color: #86868b;
+}
+
+.activity-description {
+    font-size: 1.05rem;
+    color: #515154;
+    line-height: 1.6;
+}
+
+.activity-highlights {
+    margin-top: 4px;
+    margin-left: 20px;
+    padding-left: 4px;
+    list-style: disc;
+    color: #515154;
+    line-height: 1.6;
+}
+
+.activity-highlights li {
+    margin-bottom: 8px;
 }
 
 /* Skills Section */
@@ -533,9 +639,14 @@ body::before {
     margin-bottom: 16px;
 }
 
-.volunteer-item p:last-child {
+.volunteer-item p {
     color: #515154;
     line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.volunteer-item p:last-child {
+    margin-bottom: 0;
 }
 
 /* Contact Section */
@@ -585,6 +696,16 @@ body::before {
 }
 
 .footer p { font-size: 0.95rem; }
+
+.footer a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer a:hover {
+    color: #ffffff;
+}
 
 /* ------------------ Responsive ------------------ */
 @media (max-width: 768px) {
@@ -639,6 +760,8 @@ body::before {
     .section-title { font-size: 2rem; margin-bottom: 40px; }
 
     .education-grid,
+    .experience-grid,
+    .activities-grid,
     .projects-grid,
     .certifications-grid { grid-template-columns: 1fr; }
 
