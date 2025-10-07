@@ -35,26 +35,27 @@ body::before {
 
 /* ------------------ Navigation (Edge-to-edge Frosted) ------------------ */
 .navbar {
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1100px, calc(100% - 32px));
     height: 72px;
     z-index: 1000;
-    position: fixed;
     display: block;
     overflow: visible;
     isolation: isolate;
+    border-radius: 28px;
 
     /* Liquid glass inspired by shelfswap.app & taharawjani.org */
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(32px) saturate(185%) brightness(110%);
     -webkit-backdrop-filter: blur(32px) saturate(185%) brightness(110%);
 
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.48);
+    border: 1px solid rgba(255, 255, 255, 0.32);
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.38),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.22),
         0 24px 60px rgba(15, 23, 42, 0.12),
         0 6px 18px rgba(15, 23, 42, 0.08);
 
@@ -74,6 +75,7 @@ body::before {
     opacity: 0.92;
     pointer-events: none;
     z-index: -2;
+    border-radius: inherit;
 }
 
 /* Micro noise + glow for glass realism */
@@ -91,6 +93,7 @@ body::before {
     opacity: 0.35;
     z-index: -1;
     box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.22);
+    border-radius: inherit;
 }
 
 .navbar::before,
@@ -99,10 +102,11 @@ body::before {
 }
 
 .navbar.navbar-scrolled {
-    background: rgba(255, 255, 255, 0.32);
-    border-bottom-color: rgba(255, 255, 255, 0.58);
+    background: rgba(255, 255, 255, 0.34);
+    border-color: rgba(255, 255, 255, 0.5);
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.28),
         0 28px 70px rgba(15, 23, 42, 0.16),
         0 10px 24px rgba(15, 23, 42, 0.12);
 }
@@ -119,6 +123,7 @@ body::before {
     .navbar {
         background: rgba(255, 255, 255, 0.92);
         box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.45);
     }
 }
 
@@ -134,12 +139,18 @@ body::before {
 }
 
 /* Brand text with glass effect */
-.nav-brand h2 {
+.nav-brand {
     font-size: 1.5rem;
     font-weight: 600;
     color: rgba(29, 29, 31, 0.92);
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
+
+.nav-brand-short { display: none; }
 
 .nav-menu {
     display: flex;
@@ -153,6 +164,27 @@ body::before {
     font-size: 0.95rem;
     transition: color 0.3s ease;
     position: relative;
+}
+
+.nav-brand-short { display: none; }
+
+@media (max-width: 640px) {
+    .nav-brand-full { display: none; }
+    .nav-brand-short { display: inline; }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .nav-brand {
+        gap: 4px;
+    }
 }
 
 .nav-link:hover { color: #007aff; }
