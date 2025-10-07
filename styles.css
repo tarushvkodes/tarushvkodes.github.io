@@ -5,13 +5,21 @@
     box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica', 'Roboto', 'Arial', sans-serif;
     line-height: 1.6;
     color: #1d1d1f;
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 /* --- Optional: top-of-page backdrop so the glass blur is noticeable even on white --- */
