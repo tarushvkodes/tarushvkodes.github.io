@@ -99,6 +99,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
 
+    // Clear legacy inline styles that might have been set by older scripts
+    navbar.style.removeProperty('background');
+    navbar.style.removeProperty('background-color');
+
     const updateNavbarGlass = () => {
         const isScrolled = window.scrollY > 56;
         navbar.classList.toggle('navbar-scrolled', isScrolled);
