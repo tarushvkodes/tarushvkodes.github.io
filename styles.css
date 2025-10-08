@@ -219,12 +219,13 @@ body::before {
         left: 50%;
         top: 96px;
         flex-direction: column;
+        flex: none;
         z-index: 1100;
         background: rgba(255, 255, 255, 0.24);
         backdrop-filter: blur(28px) saturate(185%) brightness(112%);
         -webkit-backdrop-filter: blur(28px) saturate(185%) brightness(112%);
         border: 1px solid rgba(255, 255, 255, 0.34);
-    width: min(640px, calc(100% - 24px));
+        width: min(640px, calc(100% - 24px));
         text-align: center;
         padding: 32px 20px 48px;
         gap: 20px;
@@ -237,12 +238,12 @@ body::before {
         background-size: cover, 240px 240px;
         background-repeat: no-repeat, repeat;
         border-radius: 48px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         transform: translate(-50%, -16px) scale(0.95);
         opacity: 0;
         pointer-events: none;
-    visibility: hidden;
+        visibility: hidden;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
@@ -280,7 +281,7 @@ body::before {
 .nav-link:hover::after { width: 100%; }
 
 .nav-toggle {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -293,6 +294,7 @@ body::before {
     transition: background 0.3s ease, box-shadow 0.3s ease;
     appearance: none;
     -webkit-appearance: none;
+    margin-left: auto;
 }
 
 .nav-toggle:hover {
@@ -316,6 +318,12 @@ body::before {
     background-color: #1d1d1f;
     border-radius: 999px;
     transition: 0.3s;
+}
+
+@media (min-width: 901px) {
+    .nav-toggle {
+        display: none;
+    }
 }
 
 /* Hero Section */
